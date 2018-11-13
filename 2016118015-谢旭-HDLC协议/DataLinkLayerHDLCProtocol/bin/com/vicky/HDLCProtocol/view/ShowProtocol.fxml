@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #fde4ea;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vicky.HDLCProtocol.view.ShowProtocolController">
+   <children>
+      <Label layoutX="326.0" layoutY="24.0" text="数据链路层协议" textFill="#e49f99">
+         <font>
+            <Font name="Calibri" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="539.0" layoutY="52.0" text="————模拟单帧停止等待协议" textFill="#8eaeb2">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="83.0" text="请输入HDLC帧：" textFill="#a1e8d6">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="inputDataField" layoutX="239.0" layoutY="81.0" prefWidth="300.0" AnchorPane.leftAnchor="125.0" />
+      <TableView fx:id="frameTable" layoutX="36.0" layoutY="115.0" prefHeight="200.0" prefWidth="700.0" style="-fx-background-color: #fde4ea;" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="135.0">
+        <columns>
+            <TableColumn fx:id="frameIdColumn" prefWidth="75.0" text="帧编号" />
+            <TableColumn fx:id="frameStateColumn" prefWidth="75.0" text="帧状态" />
+          <TableColumn fx:id="startColumn" prefWidth="75.0" text="标志字段" />
+          <TableColumn fx:id="addressColumn" prefWidth="75.0" text="地址字段" />
+            <TableColumn fx:id="controlColumn" prefWidth="75.0" text="控制字段" />
+            <TableColumn fx:id="informationColumn" prefWidth="150.0" text="信息字段" />
+            <TableColumn fx:id="fcsColumn" prefWidth="100.0" text="帧校验字段" />
+            <TableColumn fx:id="endColumn" prefWidth="75.0" text="标志字段" />
+        </columns>
+      </TableView>
+      <TextArea fx:id="resultTextArea" layoutX="122.0" layoutY="349.0" prefHeight="200.0" prefWidth="700.0" style="-fx-background-color: pink; -fx-border-color: pink;" AnchorPane.leftAnchor="50.0" />
+      <Button fx:id="frameButton" layoutX="692.0" layoutY="93.0" mnemonicParsing="false" onAction="#checkInputTexField" text="start" textFill="#e898b9" AnchorPane.rightAnchor="60.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="nextButton" layoutX="386.0" layoutY="557.0" mnemonicParsing="false" onAction="#nextStep" text="next" textFill="#e898b9">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="14.0" layoutY="109.0" text="设置帧长度：" textFill="#a1e8d6" AnchorPane.topAnchor="107.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="frameSizeField" layoutX="239.0" layoutY="107.0" promptText="最少16位" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="107.0">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font></TextField>
+      <Button fx:id="setButton" layoutX="373.0" layoutY="107.0" mnemonicParsing="false" onAction="#changeFrameSize" text="set" textFill="#d68991" AnchorPane.rightAnchor="375.0" />
+   </children>
+</AnchorPane>
